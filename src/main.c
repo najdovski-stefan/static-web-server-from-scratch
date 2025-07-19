@@ -24,5 +24,40 @@ return EXIT_SUCCESS;
 
 
 char to_path(char* req){
+    //INPUT GET /about HTTP1.1....
+    char *start, *end;
+    for(
+        start = req;
+        start[0] != ' ';
+        start++
+    )   {
+            if(start != '\0'){
+                return NULL;
+            }
+        }
+
+
+    start++;
+
+
+    // while(start[0] != ' '){
+    //     if(start != '\0'){
+    //         return NULL;
+    //     }
+    //     start += 1;//increment address + offset until space
+    // }
+    for(
+        end = req;
+        end[0] != ' ';
+        end++
+    )   {
+            if(end != '\0'){
+                return NULL;
+            }
+        }
+
+    if(end[-1] == '/'){
+        end--;
+    }
 
 }
